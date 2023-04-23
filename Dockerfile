@@ -5,7 +5,7 @@ RUN cargo install agate
 FROM debian:stable AS runner
 WORKDIR /app
 
-COPY --from=builder /root/.cargo/bin/agate /usr/bin/agate
+COPY --from=builder /usr/local/cargo/bin/agate /usr/bin/agate
 
 VOLUME ["/app/content", "/app/certs"]
 EXPOSE 1965
